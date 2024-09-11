@@ -1,0 +1,165 @@
+.bungee-tint-regular {
+  font-family: "Bungee Tint", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.suse-paragraph {
+  font-family: "SUSE", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400; /* Cambia este valor según el peso que necesites */
+  font-style: normal;
+}
+.bakbak-one-regular {
+  font-family: "Bakbak One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body{
+    background-color: black;
+}
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff; /* Puedes cambiar el color de fondo según tu diseño */
+    color: white; /* Cambia el color del texto según tu diseño */
+    z-index: 1000; /* Asegura que el header esté por encima del contenido */
+  }
+  p{
+    font-family: "suse-paragraph";
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  li {
+    margin-left: 20px;
+  }
+  
+  a {
+    color: white; /* Cambia el color de los enlaces según tu diseño */
+    text-decoration: none;
+  }
+  
+  /* Añadir un margen superior al contenido principal para evitar que se superponga con el header */
+  main {
+    margin-top: 100px; /* Ajusta según la altura de tu header */
+    padding: 20px;
+  }
+  
+  
+  header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header h1 {
+    margin: 0;
+  }
+  
+  header ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  header ul li {
+    display: inline;
+    margin-right: 15px;
+  }
+  
+  header ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  header ul li a:hover {
+    text-decoration: underline;
+  }
+   
+  h2, h3 {
+    color: #4CAF50;
+  }
+  
+  section {
+    margin-bottom: 30px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  li {
+    background-color: #F15C2D;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  li:hover {
+    background-color: #EA8262;
+  }
+  
+footer {
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.footer-info {
+  margin-bottom: 20px;
+}
+
+.footer-info h2 {
+  margin: 0;
+  color: #F15C2D;
+  font-size: 24px;
+}
+
+.footer-info p {
+  margin: 5px 0;
+  font-size: 16px;
+  font-family: "SUSE", sans-serif;
+}
+
+footer p {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: #777;
+  font-family: "SUSE", sans-serif;
+}
+.enlace{
+  color: #F15C2D;
+  font-family: "SUSE", sans-serif;
+}

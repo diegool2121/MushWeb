@@ -1,0 +1,21 @@
+ <section>
+        <header>
+            <h1>{{ post.title.rendered }}</h1>
+            <time>{{ post.date }}</time>
+        </header>
+        <article>
+            <!-- Mostrar solo el texto -->
+            <p>{{ paragraphs[0] }}</p>
+        
+            <!-- Mostrar imágenes en una etiqueta separada -->
+            <div>
+                <div>
+                    <img [src]="images" alt="Imagen del post" style="max-width: 100%; height: auto;">
+                </div>
+            </div>
+            <p>{{ paragraphs[1] }}</p>
+        </article>
+    </section>
+<hr class="curved-hr">
+
+

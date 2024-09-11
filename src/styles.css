@@ -1,0 +1,40 @@
+.suse-paragraph {
+    font-family: "SUSE", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400; /* Cambia este valor según el peso que necesites */
+    font-style: normal;
+  }
+  .bungee-tint-regular {
+    font-family: "Bungee Tint", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .bakbak-one-regular {
+    font-family: "Bakbak One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .silkscreen-bold {
+    font-family: "Silkscreen", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+h1{
+    font-size: 30px;
+    font-family:Bungee Tint;
+}
+h2{
+    font-size: 20px;
+    font-family: "SUSE", sans-serif;
+}
+p{
+    font-size: 15px;
+    font-family: "SUSE", sans-serif;
+}
+time{
+    font-family: "Bakbak One", sans-serif;
+}
+li{
+    font-family: "Bakbak One", sans-serif;
+}

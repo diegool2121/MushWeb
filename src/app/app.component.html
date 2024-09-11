@@ -1,0 +1,24 @@
+<header>
+  <nav>
+    <a routerLink="/home"><img src="https://mushroomsoft-it.com/assets/headers/logo.png" alt="" width="150"></a>
+    <ul>
+      <li ><a routerLink="/home">Inicio</a></li>
+      <li ><a routerLink="/members">Curiosidades</a></li> <!-- Enlace a "Sobre Nosotros" -->
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <router-outlet></router-outlet> <!-- Carga dinámica de componentes -->
+</main>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-info">
+      <h2>Mushroomsoft-it</h2>
+      <p>Innovación y tecnología al alcance de todos. Creando soluciones digitales para un futuro más brillante.</p>
+      <p>Contacto: <a class="enlace" href="https://mushroomsoft-it.com" target="_blank">https://mushroomsoft-it.com</a> | Teléfono: +123 456 7890</p>
+    </div>
+    <p>&copy; 2024 Mi Aplicación Web. Todos los derechos reservados.</p>
+  </div>
+</footer>
