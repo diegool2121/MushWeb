@@ -17,16 +17,19 @@ import { Observable } from 'rxjs';
 export class PostsListComponent implements OnInit {
   posts: PostI[] = []; // Almacena los posts obtenidos de la API
 
-  constructor(private dataWp: DataWpService) {
-  
-  }
+  constructor(private dataWp: DataWpService) {}
 
+  // Observable para almacenar los posts
   posts$: Observable<PostI[]> = new Observable<PostI[]>();
+
   ngOnInit() {
-    this.posts$=this.dataWp.getPosts();
-    // metodo para sacar en consola los posts
+    // método getPostsPolling() para obtener los posts cada 5 segundos
+    this.posts$ = this.dataWp.getPostsPolling();
+
+    // Suscribirse al observable para obtener los posts y mostrarlos en la consola
     this.posts$.subscribe(posts => {
-      console.log(posts);
-  } );
-}
+      this.posts = posts;
+      console.log('Posts actualizados:', this.posts);
+    });
+  }
 }
