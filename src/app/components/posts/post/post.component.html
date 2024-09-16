@@ -1,21 +1,24 @@
- <section>
-        <header>
-            <h1>{{ post.title.rendered }}</h1>
-            <time>{{ post.date }}</time>
-        </header>
-        <article>
-            <!-- Mostrar solo el texto -->
+<section class="post-container">
+    <header class="post-header">
+        <h1>{{ post.title.rendered }}</h1>
+        <!-- Segunda columna: Imagen -->
+        <div class="column image-column">
+            <img [src]="images" alt="Imagen del post" style="max-width: 100%; height: auto;">
+        </div>
+        <time>{{ post.date }}</time>
+    </header>
+    <article class="post-content">
+         
+        <!-- Primera columna: Texto principal -->
+        <div class="column">
             <p>{{ paragraphs[0] }}</p>
+        </div>
         
-            <!-- Mostrar imágenes en una etiqueta separada -->
-            <div>
-                <div>
-                    <img [src]="images" alt="Imagen del post" style="max-width: 100%; height: auto;">
-                </div>
-            </div>
+        <!-- Tercera columna: Texto secundario -->
+        <div class="column">
             <p>{{ paragraphs[1] }}</p>
-        </article>
-    </section>
-<hr class="curved-hr">
+        </div>
+    </article>
+</section>
 
 

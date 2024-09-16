@@ -10,22 +10,32 @@ h2{
 p{
     color : rgb(0, 0, 0);
     text-align: justify;
-}   
+} 
+
+
 article img {
-    width: 500px; /* Asegura que las imágenes no excedan el ancho del contenedor */
-    height: auto;    /* Mantiene la proporción original de la imagen */
-    border-radius: 10px; /* Añade bordes redondeados a las imágenes */
+    width: 100px; 
+    height: auto;   
+    border-radius: 10px; 
     box-shadow: 1px 5px 5px rgba(0,0,0,0.5);
 
 }
 article{
     text-align: center;
 }
-  section{
-    margin-bottom: 80px;
-    margin-top: 80px;
-  }
+
 time{
     font-size: 10px;
     font-style: oblique;
 }
+img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 1px 5px 5px rgba(0,0,0,0.5);
+}
+
+
+
+
+

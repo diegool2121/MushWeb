@@ -1,0 +1,39 @@
+/* Contenedor de todos los posts */
+.posts-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual tamaño */
+    gap: 20px; /* Espacio entre columnas */
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Estilo para cada post */
+.post-item {
+    background-color: #f9f9f9; /* Color de fondo de cada post */
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para cada post */
+    border-radius: 8px; /* Bordes redondeados */
+    box-sizing: border-box;
+}
+
+/* Estilos responsivos para pantallas más pequeñas */
+@media (max-width: 1024px) {
+    .posts-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
+    }
+}
+
+@media (max-width: 768px) {
+    .posts-container {
+        grid-template-columns: 1fr; /* 1 columna en pantallas pequeñas */
+    }
+}
+
+/* Estilos para la línea separadora */
+.curved-hr {
+    border: none;
+    height: 2px;
+    background-image: linear-gradient(to right, transparent, #F15C2D, transparent);
+    margin: 40px 0;
+}
