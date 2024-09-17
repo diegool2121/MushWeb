@@ -10,7 +10,7 @@ import { PostI } from '../post.interface';
 })
 export class PostComponent implements OnInit {
   @Input() post!: PostI;
-  paragraphs: string[] = []; // Array para almacenar cada <p>
+  paragraphs: string[] = []; // Array to store the paragraphs
   images: string[] = [];
 
   ngOnInit() {

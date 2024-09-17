@@ -1,20 +1,15 @@
 <section class="post-container">
     <header class="post-header">
         <h1>{{ post.title.rendered }}</h1>
-        <!-- Segunda columna: Imagen -->
         <div class="column image-column">
             <img [src]="images" alt="Imagen del post" style="max-width: 100%; height: auto;">
         </div>
         <time>{{ post.date }}</time>
     </header>
     <article class="post-content">
-         
-        <!-- Primera columna: Texto principal -->
         <div class="column">
             <p>{{ paragraphs[0] }}</p>
         </div>
-        
-        <!-- Tercera columna: Texto secundario -->
         <div class="column">
             <p>{{ paragraphs[1] }}</p>
         </div>

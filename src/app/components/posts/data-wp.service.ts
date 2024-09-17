@@ -6,15 +6,15 @@ import { switchMap } from 'rxjs/operators';
 
 @Injectable()
 export class DataWpService {
-  urlApi: string = 'http://localhost:8080/Mushroomsoft/wordpress/wp-json/wp/v2/posts'; // URL de la API
+  urlApi: string = 'http://localhost:4283/wp-json/wp/v2/posts'; // API URL
 
   constructor(private http: HttpClient) { }
 
-  // Polling cada 30 segundos para obtener los posts
+  // polling method to get posts every 5 seconds
   getPostsPolling(): Observable<PostI[]> {
-    return interval(5000) // Intervalo de 5 segundos
+    return interval(5000) // 5 seconds
       .pipe(
-        switchMap(() => this.getPosts()) // Llama a getPosts() en cada intervalo
+        switchMap(() => this.getPosts()) // call getPosts() every 5 seconds
       );
   }
 
@@ -22,7 +22,7 @@ export class DataWpService {
   getPosts(): Observable<PostI[]> {
     return this.http.get<PostI[]>(this.urlApi, {
       params: {
-        per_page: '9' // Obtener 9 posts
+        per_page: '9' // get 9 posts
       }
     });
   }
