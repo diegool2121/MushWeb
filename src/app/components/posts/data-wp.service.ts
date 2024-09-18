@@ -7,6 +7,7 @@ import { switchMap } from 'rxjs/operators';
 @Injectable()
 export class DataWpService {
   urlApi: string = 'http://localhost:4283/wp-json/wp/v2/posts'; // API URL
+ // urlApi: string = 'https://autorack.proxy.rlwy.net:3306/wp-json/wp/v2/posts';
 
   constructor(private http: HttpClient) { }
 
