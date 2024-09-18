@@ -4,7 +4,7 @@ import { PostI } from '../post.interface';
 @Component({
   selector: 'app-post',
   standalone: true,
-  imports: [],
+  imports: [], // Importa PostComponent
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css']
 })

@@ -58,7 +58,7 @@ header::after {
   }
   nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 10px;
   }
@@ -90,6 +90,8 @@ header::after {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-left: 100px;
+    padding-right: 100px;
   }
   
   header h1 {
