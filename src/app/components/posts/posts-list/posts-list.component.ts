@@ -15,7 +15,7 @@ import { Observable } from 'rxjs';
   providers: [DataWpService]
 })
 export class PostsListComponent implements OnInit {
-  // Variables para almacenar los posts
+  // Variables para almacenar los posts y párrafos de la parte trasera
   posts: PostI[] = [];
   backParagraphs: string[] = [];
 
@@ -26,12 +26,12 @@ export class PostsListComponent implements OnInit {
       this.posts = posts;
       console.log(this.posts);
 
-      // Procesar los párrafos para cada post y almacenarlos
-      this.posts.forEach((post, index) => {
+      // Mapear directamente los primeros párrafos de cada post
+      this.backParagraphs = this.posts.map(post => {
         const parser = new DOMParser();
         const doc = parser.parseFromString(post.content.rendered, 'text/html');
-        const paragraphElements = doc.querySelectorAll('p');
-        this.backParagraphs[index] = Array.from(paragraphElements).map(p => p.textContent || '')[0] || '';
+        const paragraphElement = doc.querySelector('p');
+        return paragraphElement ? paragraphElement.textContent || '' : 'No content available';
       });
     });
   }
