@@ -4,14 +4,18 @@ import { PostI } from '../post.interface';
 @Component({
   selector: 'app-post',
   standalone: true,
-  imports: [], // Importa PostComponent
+  imports: [], // Importa otros componentes o módulos si es necesario
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
   @Input() post!: PostI;
-  paragraphs: string[] = []; // Array to store the paragraphs
+  paragraphs: string[] = [];
   images: string[] = [];
+  backParagraphs: string[] = []; // Agregado para los párrafos traseros
+  h2s: string[] = []; // Agregado para los h2
+  h3s: string[] = []; // Agregado para los h3
+  
 
   ngOnInit() {
     this.extractContent();
@@ -22,9 +26,18 @@ export class PostComponent implements OnInit {
     const parser = new DOMParser();
     const doc = parser.parseFromString(this.post.content.rendered, 'text/html');
 
-   // Extraer cada uno de los párrafos <p>
-   const paragraphElements = doc.querySelectorAll('p');
-   this.paragraphs = Array.from(paragraphElements).map(p => p.textContent || '')
+    // Extraer cada uno de los párrafos <p>
+    const paragraphElements = doc.querySelectorAll('p');
+    this.paragraphs = Array.from(paragraphElements).map(p => p.textContent || '');
+
+    //Extraer el h2 del parrafo
+    const h2Elements = doc.querySelectorAll('h2');
+    this.h2s = Array.from(h2Elements).map(h => h.textContent || '');
+
+    // Extraer el h3 del parrafo
+    const h3Elements = doc.querySelectorAll('h3');
+    this.h3s = Array.from(h3Elements).map(h => h.textContent || '');
+
 
     // Extraer imágenes
     const imageElements = doc.querySelectorAll('img');

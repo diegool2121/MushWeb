@@ -14,17 +14,13 @@
   font-weight: 400;
   font-style: normal;
 }
-
-body{
-    background-color: black;
-}
 /* Estilos generales */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
     color: #333;
+    background-color: rgb(0, 0, 0);
   }
   
   header {
@@ -82,7 +78,7 @@ header::after {
   /* Añadir un margen superior al contenido principal para evitar que se superponga con el header */
   main {
     margin-top: 100px; /* Ajusta según la altura de tu header */
-    padding: 20px;
+    padding: 60px;
   }
   
   
@@ -187,7 +183,4 @@ footer p {
   height: 2px;
   background-image: linear-gradient(to right, transparent, #F15C2D, transparent);
   margin: 40px 0;
-}
-body{
-  background-color: black;
 }

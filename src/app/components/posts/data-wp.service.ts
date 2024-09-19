@@ -1,30 +1,24 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable, catchError, of } from 'rxjs';
 import { PostI } from './post.interface';
-import { Observable, interval } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class DataWpService {
-  urlApi: string = 'http://localhost:4283/wp-json/wp/v2/posts'; // API URL
- // urlApi: string = 'https://autorack.proxy.rlwy.net:3306/wp-json/wp/v2/posts';
+  private urlApi: string = 'http://localhost:4283/wp-json/wp/v2/posts'; // Reemplaza con tu URL de API
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  // polling method to get posts every 5 seconds
-  getPostsPolling(): Observable<PostI[]> {
-    return interval(5000) // 5 seconds
-      .pipe(
-        switchMap(() => this.getPosts()) // call getPosts() every 5 seconds
-      );
-  }
-
-  // Método para obtener los posts de la api
+  // Método que obtiene los posts una vez sin polling
   getPosts(): Observable<PostI[]> {
-    return this.http.get<PostI[]>(this.urlApi, {
-      params: {
-        per_page: '9' // get 9 posts
-      }
-    });
+    return this.http.get<PostI[]>(this.urlApi).pipe(
+      catchError(error => {
+        console.error('Error fetching posts', error);
+        // Devuelve un array vacío en caso de error
+        return of([]);
+      })
+    );
   }
 }

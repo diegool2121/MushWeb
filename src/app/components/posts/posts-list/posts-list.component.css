@@ -1,11 +1,66 @@
-/* Contenedor de todos los posts */
-.posts-container {
+/* Contenedor de todas las publicaciones */
+.row {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual tamaño */
-    gap: 20px; /* Espacio entre columnas */
-    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Número automático de columnas basado en el tamaño mínimo de las tarjetas */
+    gap: 16px; /* Espacio entre las tarjetas */
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    border-radius: 10px;
+}
+
+/* Contenedor individual para cada tarjeta */
+.posts-container {
+    box-sizing: border-box; /* Incluye el padding y border en el ancho y alto total */
+}
+
+/* Estilo para cada tarjeta */
+.card {
+    perspective: 150rem;
+    position: relative;
+    height: 30rem;
+}
+
+/* Estilo para el lado de la tarjeta */
+.card__side {
+    font-size: 2rem;
+    height: 100%;
+    transition: all 0.8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    box-sizing: border-box;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0 1.5rem 4rem rgba(255, 255, 255, 0.15);
+}
+
+/* Lado frontal de la tarjeta */
+.card__side--front {
+    color: #000; /* Color de texto para el lado frontal */
+    background-color: #ffffff;
+}
+
+/* Lado posterior de la tarjeta */
+.card__side--back {
+    background-color: rgb(216, 205, 205);
+    transform: rotateY(180deg);
+    text-align: justify;
+}
+
+/* Hover para la tarjeta */
+.card:hover .card__side--front {
+    transform: rotateY(180deg);
+}
+
+.card:hover .card__side--back {
+    transform: rotateY(0);
+}
+
+/* Estilos para la línea separadora */
+.curved-hr {
+    border: none;
+    height: 2px;
+    background-image: linear-gradient(to right, transparent, #F15C2D, transparent);
+    margin: 40px 0;
 }
 
 /* Estilo para cada post */
@@ -15,25 +70,4 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para cada post */
     border-radius: 8px; /* Bordes redondeados */
     box-sizing: border-box;
-}
-
-/* Estilos responsivos para pantallas más pequeñas */
-@media (max-width: 1024px) {
-    .posts-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
-    }
-}
-
-@media (max-width: 768px) {
-    .posts-container {
-        grid-template-columns: 1fr; /* 1 columna en pantallas pequeñas */
-    }
-}
-
-/* Estilos para la línea separadora */
-.curved-hr {
-    border: none;
-    height: 2px;
-    background-image: linear-gradient(to right, transparent, #F15C2D, transparent);
-    margin: 40px 0;
 }

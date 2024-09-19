@@ -9,27 +9,30 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-posts-list',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, PostComponent], // Importa PostComponent
+  imports: [CommonModule, HttpClientModule, PostComponent],
   templateUrl: './posts-list.component.html',
   styleUrls: ['./posts-list.component.css'],
   providers: [DataWpService]
 })
 export class PostsListComponent implements OnInit {
-  posts: PostI[] = []; // Almacena los posts obtenidos de la API
+  // Variables para almacenar los posts
+  posts: PostI[] = [];
+  backParagraphs: string[] = [];
 
   constructor(private dataWp: DataWpService) {}
 
-  // Observable para almacenar los posts
-  posts$: Observable<PostI[]> = new Observable<PostI[]>();
-
   ngOnInit() {
-    // método getPostsPolling() para obtener los posts cada 5 segundos
-    this.posts$ = this.dataWp.getPostsPolling();
-
-    // Suscribirse al observable para obtener los posts y mostrarlos en la consola
-    this.posts$.subscribe(posts => {
+    this.dataWp.getPosts().subscribe(posts => {
       this.posts = posts;
-      console.log('Posts actualizados:', this.posts);
+      console.log(this.posts);
+
+      // Procesar los párrafos para cada post y almacenarlos
+      this.posts.forEach((post, index) => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(post.content.rendered, 'text/html');
+        const paragraphElements = doc.querySelectorAll('p');
+        this.backParagraphs[index] = Array.from(paragraphElements).map(p => p.textContent || '')[0] || '';
+      });
     });
   }
 }
