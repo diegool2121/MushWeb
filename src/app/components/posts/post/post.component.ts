@@ -1,10 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { PostI } from '../post.interface';
+import { CommonModule } from '@angular/common'; // Importa CommonModule
+
 
 @Component({
   selector: 'app-post',
   standalone: true,
-  imports: [], // Importa otros componentes o módulos si es necesario
+  imports: [CommonModule], // Importa otros componentes o módulos si es necesario
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css']
 })
@@ -37,7 +39,6 @@ export class PostComponent implements OnInit {
     // Extraer el h3 del parrafo
     const h3Elements = doc.querySelectorAll('h3');
     this.h3s = Array.from(h3Elements).map(h => h.textContent || '');
-
 
     // Extraer imágenes
     const imageElements = doc.querySelectorAll('img');

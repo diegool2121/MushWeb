@@ -23,7 +23,7 @@
 .card__side {
     font-size: 2rem;
     height: 100%;
-    transition: all 0.8s ease;
+    transition: all 1s ease;
     position: absolute;
     top: 0;
     left: 0;
@@ -41,7 +41,7 @@
 
 /* Lado posterior de la tarjeta */
 .card__side--back {
-    background-color: rgb(216, 205, 205);
+    background-color: rgb(255, 255, 255);
     transform: rotateY(180deg);
     text-align: justify;
 }
