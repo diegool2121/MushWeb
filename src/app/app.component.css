@@ -78,7 +78,7 @@ header::after {
   /* Añadir un margen superior al contenido principal para evitar que se superponga con el header */
   main {
     margin-top: 100px; /* Ajusta según la altura de tu header */
-    padding: 60px;
+    padding: 130px;
   }
   
   
@@ -86,8 +86,8 @@ header::after {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 200px;
+    padding-right: 200px;
   }
   
   header h1 {

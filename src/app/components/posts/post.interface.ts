@@ -6,6 +6,5 @@ export interface PostI {
         rendered: string;
     };
     image: string;
-    date: string;
     status?: string;
 }

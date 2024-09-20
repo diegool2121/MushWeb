@@ -1,22 +1,19 @@
 <section class="post-container">
     <header class="post-header">
-        <h1 style="padding: 20px;">{{ post.title.rendered }}</h1>
-        <div class="column image-column" style="padding-left: 10px; padding-right: 10px; text-align: center;">
-            <img [src]="images" alt="Imagen del post" style="max-width: 100%; height: auto; width: 190px;">
-        </div>
+        <h3>{{h3s}}</h3>
     </header>
     <article class="post-content">
         <div class="column">
-            <h2>{{h2s}}</h2>
+            <h4>{{h4s[0]}}</h4>
+            <p>{{paragraphs[0]}}</p>
         </div>
         <div class="column">
-            <h3 style="font-size: 14px;">{{h3s}}</h3>
+            <h4>{{h4s[1]}}</h4>
+            <p>{{paragraphs[1]}}</p>
+        </div>
+        <div class="column">
+            <h4>{{h4s[2]}}</h4>
+            <p>{{paragraphs[2]}}</p>
         </div>
     </article>
-    <div class="card__side card__side--back">
-        <p *ngFor="let paragraph of backParagraphs">{{ paragraph }}</p>
-      </div>
 </section>
-
-
-

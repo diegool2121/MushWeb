@@ -19,15 +19,26 @@
     font-weight: 700;
     font-style: normal;
   }
+  .open-sans-regular {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400; /* Replace with the desired weight */
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+  }
 
 h1{
-    font-size: 23px;
-    font-family:Bungee Tint;
+    font-size: 24px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: aliceblue;
 }
 h2{
-    font-size: 20px;
-    font-family: "SUSE", sans-serif;
+    font-size: 18px;
+    font-family: "Open Sans", sans-serif;
+    color: #ffffff;
+    font-weight: lighter;
 }
+
 p{
     font-size: 15px;
     font-family: "SUSE", sans-serif;

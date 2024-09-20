@@ -14,25 +14,39 @@ import { Observable } from 'rxjs';
   styleUrls: ['./posts-list.component.css'],
   providers: [DataWpService]
 })
+
 export class PostsListComponent implements OnInit {
   // Variables para almacenar los posts y párrafos de la parte trasera
+  
   posts: PostI[] = [];
-  backParagraphs: string[] = [];
+  post: PostI[] = [];
+  h2s: string[] = [];
+  images: string[] = [];
+  paragraphs: string[] = [];
 
   constructor(private dataWp: DataWpService) {}
+  
 
   ngOnInit() {
     this.dataWp.getPosts().subscribe(posts => {
       this.posts = posts;
       console.log(this.posts);
-
-      // Mapear directamente los primeros párrafos de cada post
-      this.backParagraphs = this.posts.map(post => {
+    
+      // Mapear directamente las imágenes de cada post
+      this.images = this.posts.map(post => {
         const parser = new DOMParser();
         const doc = parser.parseFromString(post.content.rendered, 'text/html');
-        const paragraphElement = doc.querySelector('p');
-        return paragraphElement ? paragraphElement.textContent || '' : 'No content available';
+        const imageElement = doc.querySelector('img');
+        return imageElement ? imageElement.src : 'No image available';
       });
-    });
-  }
+      // Mapear directamente los h2 de cada post
+      this.h2s = this.posts.map(post => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(post.content.rendered, 'text/html');
+        const h2Element = doc.querySelector('h2');
+        return h2Element ? h2Element.textContent || '' : 'No h2 available';
+      });
+  });
 }
+}
+

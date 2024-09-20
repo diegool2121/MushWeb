@@ -14,10 +14,10 @@ export class PostComponent implements OnInit {
   @Input() post!: PostI;
   paragraphs: string[] = [];
   images: string[] = [];
-  backParagraphs: string[] = []; // Agregado para los párrafos traseros
   h2s: string[] = []; // Agregado para los h2
   h3s: string[] = []; // Agregado para los h3
-  
+  h4s: string[] = []; // Agregado para los h4
+
 
   ngOnInit() {
     this.extractContent();
@@ -39,6 +39,10 @@ export class PostComponent implements OnInit {
     // Extraer el h3 del parrafo
     const h3Elements = doc.querySelectorAll('h3');
     this.h3s = Array.from(h3Elements).map(h => h.textContent || '');
+
+    // Extraer el h4 del parrafo y evitar los string "="
+    const h4Elements = doc.querySelectorAll('h4');
+    this.h4s = Array.from(h4Elements).map(h => h.textContent || '');
 
     // Extraer imágenes
     const imageElements = doc.querySelectorAll('img');
