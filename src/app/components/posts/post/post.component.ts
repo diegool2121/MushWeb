@@ -12,12 +12,11 @@ import { CommonModule } from '@angular/common'; // Importa CommonModule
 })
 export class PostComponent implements OnInit {
   @Input() post!: PostI;
-  paragraphs: string[] = [];
   images: string[] = [];
-  h2s: string[] = []; // Agregado para los h2
-  h3s: string[] = []; // Agregado para los h3
-  h4s: string[] = []; // Agregado para los h4
-
+  h2s: string[] = []; 
+  h3s: string[] = []; 
+  h4s: string[] = [];
+  paragraphs: string[] = [];
 
   ngOnInit() {
     this.extractContent();
@@ -32,19 +31,19 @@ export class PostComponent implements OnInit {
     const paragraphElements = doc.querySelectorAll('p');
     this.paragraphs = Array.from(paragraphElements).map(p => p.textContent || '');
 
-    //Extraer el h2 del parrafo
+    //Extraer el h2 del content
     const h2Elements = doc.querySelectorAll('h2');
     this.h2s = Array.from(h2Elements).map(h => h.textContent || '');
 
-    // Extraer el h3 del parrafo
+    // Extraer el h3 del content
     const h3Elements = doc.querySelectorAll('h3');
     this.h3s = Array.from(h3Elements).map(h => h.textContent || '');
 
-    // Extraer el h4 del parrafo y evitar los string "="
+    // Extraer el h4 del content 
     const h4Elements = doc.querySelectorAll('h4');
     this.h4s = Array.from(h4Elements).map(h => h.textContent || '');
 
-    // Extraer imágenes
+    // Extraer imágenes del content 
     const imageElements = doc.querySelectorAll('img');
     this.images = Array.from(imageElements).map(img => img.src);
   }

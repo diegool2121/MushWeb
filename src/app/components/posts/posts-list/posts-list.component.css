@@ -1,42 +1,52 @@
-/* Contenedor de todas las publicaciones */
-.row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Número automático de columnas basado en el tamaño mínimo de las tarjetas */
-    gap: 16px; /* Espacio entre las tarjetas */
-    justify-content: center; /* Centra las tarjetas horizontalmente */
-    border-radius: 10px;
+/* Estilo del contenedor de las tarjetas */
+.posts-container {
+    display: flex; /* Flexbox para alinear y centrar elementos */
+    text-align: left;
+    flex-direction: column; /* Alinea los elementos de arriba a abajo */
+    justify-content: center; /* Centra verticalmente los elementos dentro del contenedor */
+    box-sizing: border-box; /* Incluye el padding y border en el ancho y alto total */
+    padding: 20px;
 }
 
-/* Contenedor individual para cada tarjeta */
-.posts-container {
-    box-sizing: border-box; /* Incluye el padding y border en el ancho y alto total */
+/* Contenedor para las filas de tarjetas */
+.row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Crea columnas automáticas con un mínimo de 200px */
+    gap: 16px; /* Espacio entre las tarjetas */
+    justify-content: center; /* Centra las columnas horizontalmente */
+    align-items: center; /* Centra las tarjetas verticalmente dentro del contenedor */
+    padding: 20px;
 }
 
 /* Estilo para cada tarjeta */
 .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: relative;
     height: 540px;
     width: 264px;
     overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 1.5rem 4rem rgba(157, 151, 253, 0.15);
 }
 
 /* Estilo para el lado de la tarjeta */
 .card__side {
     font-size: 2rem;
     height: 100%;
+    width: 100%;
     transition: opacity 0.8s ease;
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
     border-radius: 10px;
-    box-shadow: 0 1.5rem 4rem rgba(255, 255, 255, 0.15);
-    z-index: 1;
 }
 
 /* Lado frontal de la tarjeta */
 .card__side--front {
-    color: #000; /* Color de texto para el lado frontal */
+    color: #000;
     background-color: #ffffff;
     z-index: 2;
     opacity: 1;
@@ -44,21 +54,19 @@
 
 /* Lado posterior de la tarjeta */
 .card__side--back {
-    background-color: rgba(18, 37, 49, 0.8); /* Fondo translúcido para el lado posterior */
+    background-color: rgba(18, 37, 49, 0.8); /* Fondo translúcido */
     text-align: justify;
-    background-color: #122531;
     z-index: 3;
     opacity: 0;
-    justify-content: center;
 }
 
 /* Hover para la tarjeta */
 .card:hover .card__side--front {
-    opacity: 0.3;
+    opacity: 0.7;
 }
 
 .card:hover .card__side--back {
-    opacity: 0.6;
+    opacity: 0.7;
 }
 
 /* Estilos para la línea separadora */
@@ -71,12 +79,16 @@
 
 /* Estilo para cada post */
 .post-item {
-    background-color: #f9f9f9; /* Color de fondo de cada post */
+    background-color: #f9f9f9;
     padding: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para cada post */
-    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
     box-sizing: border-box;
 }
-img{
-border-radius: 10px;
+
+/* Estilo para las imágenes */
+img {
+    border-radius: 10px;
+    max-width: 100%; /* Para asegurarse de que no se sobrepasa el contenedor */
+    height: auto; /* Mantiene las proporciones correctas */
 }

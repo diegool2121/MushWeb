@@ -25,9 +25,10 @@ p{
     width: 264px;
     max-width: 100%;
     height: 540px;
-    padding: 1rem;
     box-sizing: border-box;
     align-content: center;
+    padding-right: 40px;
+    padding-left: 20px;
 }
 
 .post-header h3 {
@@ -42,6 +43,7 @@ p{
     display: flex; /* Para organizar las columnas en línea */
     flex-wrap: wrap; /* Si no hay espacio, las columnas saltan a la siguiente línea */
     gap: 1rem; /* Espacio entre las columnas */
+    
 }
 .column {
     flex: 1 1 30%; /* Las columnas se ajustarán a un 30% del contenedor */

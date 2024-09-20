@@ -17,16 +17,13 @@ import { Observable } from 'rxjs';
 
 export class PostsListComponent implements OnInit {
   // Variables para almacenar los posts y párrafos de la parte trasera
-  
   posts: PostI[] = [];
   post: PostI[] = [];
   h2s: string[] = [];
   images: string[] = [];
-  paragraphs: string[] = [];
 
   constructor(private dataWp: DataWpService) {}
   
-
   ngOnInit() {
     this.dataWp.getPosts().subscribe(posts => {
       this.posts = posts;
