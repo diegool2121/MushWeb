@@ -1,11 +1,14 @@
 /* Estilo del contenedor de las tarjetas */
 .posts-container {
     display: flex; /* Flexbox para alinear y centrar elementos */
-    text-align: left;
     flex-direction: column; /* Alinea los elementos de arriba a abajo */
     justify-content: center; /* Centra verticalmente los elementos dentro del contenedor */
     box-sizing: border-box; /* Incluye el padding y border en el ancho y alto total */
-    padding: 20px;
+    align-items: center;
+    
+}
+.posts-container h1 {
+    text-align: left;
 }
 
 /* Contenedor para las filas de tarjetas */
@@ -15,7 +18,6 @@
     gap: 16px; /* Espacio entre las tarjetas */
     justify-content: center; /* Centra las columnas horizontalmente */
     align-items: center; /* Centra las tarjetas verticalmente dentro del contenedor */
-    padding: 20px;
 }
 
 /* Estilo para cada tarjeta */

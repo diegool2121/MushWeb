@@ -78,7 +78,9 @@ header::after {
   /* Añadir un margen superior al contenido principal para evitar que se superponga con el header */
   main {
     margin-top: 100px; /* Ajusta según la altura de tu header */
-    padding: 130px;
+    padding: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
   }
   
   
