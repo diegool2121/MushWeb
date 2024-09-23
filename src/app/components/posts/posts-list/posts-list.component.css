@@ -93,4 +93,7 @@ img {
     border-radius: 10px;
     max-width: 100%; /* Para asegurarse de que no se sobrepasa el contenedor */
     height: auto; /* Mantiene las proporciones correctas */
+    height: 540px;
+    width: 264px; 
+    object-fit: cover;
 }

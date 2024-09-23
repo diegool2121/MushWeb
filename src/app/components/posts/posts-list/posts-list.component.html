@@ -2,13 +2,13 @@
   <div class="posts-container" *ngFor="let post of posts; let i = index">
     <div class="card">
       <div class="card__side card__side--front">
-        <img [src]="images[i]" alt="Imagen del post" style="max-width: 100%; height: 540px; width: 264px; object-fit: cover;">
+        <img [src]="images[i]" alt="Imagen del post">
       </div>
       <div class="card__side card__side--back">
         <app-post [post]="post"></app-post>
       </div>
     </div>
     <h1>{{post.title.rendered}}</h1>
-    <h2>{{h2s[i]}}</h2>
+    <h2>{{h1s[i]}}</h2>
   </div>
 </div>

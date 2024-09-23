@@ -8,16 +8,14 @@ import { PostI } from './post.interface';
   providedIn: 'root',
 })
 export class DataWpService {
-  private urlApi: string = 'http://localhost:4283/wp-json/wp/v2/posts'; // Reemplaza con tu URL de API
+  private urlApi: string = 'http://localhost:4283/wp-json/wp/v2/posts';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  // Método que obtiene los posts sin polling
   getPosts(): Observable<PostI[]> {
     return this.http.get<PostI[]>(this.urlApi).pipe(
       catchError(error => {
         console.error('Error fetching posts', error);
-        // Devuelve un array vacío en caso de error
         return of([]);
       })
     );

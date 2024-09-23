@@ -16,10 +16,8 @@ import { Observable } from 'rxjs';
 })
 
 export class PostsListComponent implements OnInit {
-  // Variables para almacenar los posts y párrafos de la parte trasera
   posts: PostI[] = [];
-  post: PostI[] = [];
-  h2s: string[] = [];
+  h1s: string[] = [];
   images: string[] = [];
 
   constructor(private dataWp: DataWpService) {}
@@ -29,19 +27,19 @@ export class PostsListComponent implements OnInit {
       this.posts = posts;
       console.log(this.posts);
     
-      // Mapear directamente las imágenes de cada post
+      // img mapping
       this.images = this.posts.map(post => {
         const parser = new DOMParser();
         const doc = parser.parseFromString(post.content.rendered, 'text/html');
         const imageElement = doc.querySelector('img');
         return imageElement ? imageElement.src : 'No image available';
       });
-      // Mapear directamente los h2 de cada post
-      this.h2s = this.posts.map(post => {
+      // h1 mapping
+      this.h1s = this.posts.map(post => {
         const parser = new DOMParser();
         const doc = parser.parseFromString(post.content.rendered, 'text/html');
-        const h2Element = doc.querySelector('h2');
-        return h2Element ? h2Element.textContent || '' : 'No h2 available';
+        const h1Element = doc.querySelector('h1');
+        return h1Element ? h1Element.textContent || '' : 'No h1 available';
       });
   });
 }
