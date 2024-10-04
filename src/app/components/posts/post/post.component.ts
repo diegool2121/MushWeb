@@ -14,7 +14,7 @@ export class PostComponent implements OnInit {
   h2s: string[] = []; 
   h3s: string[] = []; 
   paragraphs: string[] = []; 
-  images: string[] = [];
+  
 
   ngOnInit() {
     this.extractContent();

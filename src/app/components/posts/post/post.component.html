@@ -1,19 +1,11 @@
 <section class="post-container">
     <header class="post-header">
-        <h3>{{h2s}}</h3>
+        <h3>{{ h2s }}</h3>
     </header>
     <article class="post-content">
-        <div class="column">
-            <h4>{{h3s[0]}}</h4>
-            <p>{{paragraphs[0]}}</p>
-        </div>
-        <div class="column">
-            <h4>{{h3s[1]}}</h4>
-            <p>{{paragraphs[1]}}</p>
-        </div>
-        <div class="column">
-            <h4>{{h3s[2]}}</h4>
-            <p>{{paragraphs[2]}}</p>
+        <div class="column" *ngFor="let h3 of h3s; let i = index">
+            <h4>{{ h3 }}</h4>
+            <p>{{ paragraphs[i] }}</p>
         </div>
     </article>
 </section>
