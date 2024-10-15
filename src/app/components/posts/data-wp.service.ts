@@ -8,7 +8,7 @@ import { PostI } from './post.interface';
   providedIn: 'root',
 })
 export class DataWpService {
-  private urlApi: string = 'http://localhost:4283/wp-json/wp/v2/posts';
+  private urlApi: string = 'http://localhost:4283/wp-json/wp/v2/pages';
 
   constructor(private http: HttpClient) { }
 
